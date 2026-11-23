@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>OIL SHOCK | Global Energy Crisis Monitor</title>
+    <style>
+        :root {
+            --bg: #fdfbf7;
+            --panel: #ffffff;
+            --text: #1e293b;
+            --muted: #64748b;
+            --accent: #ea580c;
+            --line: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font: 15px/1.6 system-ui, sans-serif;
+        }
+
+        header {
+            padding: 36px max(20px, calc((100% - 1040px)/2)) 24px;
+            border-bottom: 1px solid var(--line);
+            background: #fff7ed;
+        }
+
+        .kicker {
+            color: var(--accent);
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            font-size: 12px;
+        }
+
+        .brand {
+            font-size: clamp(34px, 6vw, 56px);
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            margin: 4px 0;
+        }
+
+        .subtitle {
+            font-size: clamp(15px, 2vw, 19px);
+            max-width: 780px;
+            color: var(--muted);
+        }
+
+        .wrap {
+            max-width: 1040px;
+            margin: auto;
+            padding: 24px 20px 50px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .nav a {
+            color: var(--text);
+            text-decoration: none;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+
+        .two {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 14px;
+        }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 18px;
+        }
+
+        .grid .card:nth-child(1) {
+            background: #ffedd5;
+            border-color: #fed7aa;
+        }
+
+        .grid .card:nth-child(2) {
+            background: #e0f2fe;
+            border-color: #bae6fd;
+        }
+
+        .grid .card:nth-child(3) {
+            background: #dcfce7;
+            border-color: #bbf7d0;
+        }
+
+        .grid .card:nth-child(4) {
+            background: #f3e8ff;
+            border-color: #e9d5ff;
+        }
+
+        .metric {
+            font-size: clamp(24px, 4vw, 34px);
+            font-weight: 800;
+            color: var(--text);
+        }
+
+        .label,
+        .intro,
+        .small {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .tag {
+            display: inline-block;
+            color: var(--accent);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        section {
+            margin-top: 32px;
+        }
+
+        h2 {
+            font-size: 21px;
+            margin: 0 0 4px;
+        }
+
+        h3 {
+            font-size: 16px;
+            margin: 0 0 8px;
+        }
+
+        .barrow {
+            display: grid;
+            grid-template-columns: 75px 1fr 48px;
+            gap: 10px;
+            align-items: center;
+            margin: 12px 0;
+            font-size: 13px;
+        }
+
+        .track {
+            height: 12px;
+            background: #f1f5f9;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .bar {
+            height: 100%;
+            background: linear-gradient(90deg, #38bdf8, #fb923c);
+            border-radius: 10px;
+        }
+
+        .callout {
+            border-left: 3px solid #fb923c;
+            padding: 10px 14px;
+            background: #fff7ed;
+            border-radius: 0 8px 8px 0;
+            font-size: 14px;
+        }
+
+        ul,
+        ol {
+            padding-left: 18px;
+        }
+
+        li {
+            margin: 6px 0;
+        }
+
+        .pill {
+            display: inline-block;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 3px 10px;
+            font-size: 11px;
+            margin: 3px;
+        }
+
+        a {
+            color: #0284c7;
+        }
+
+        footer {
+            border-top: 1px solid var(--line);
+            margin-top: 36px;
+            padding-top: 16px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        @media (max-width: 800px) {
+
+            .grid,
+            .two {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .grid,
+            .two {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="kicker">BU100 · SDG ACTION LAB · RESEARCH EDITION</div>
+        <div class="brand">OIL SHOCK</div>
+        <div class="subtitle">War, crude oil supply disruptions and global economic losses — an evidence-led monitor of
+            energy-market vulnerability.</div>
+        <p><span class="pill">Primary SDG 7</span><span class="pill">Secondary SDG 8</span><span class="pill">Secondary
+                SDG 9</span><span class="pill">Research review: 22 Nov 2026</span></p>
+    </header>
+    <main class="wrap">
+        <nav class="nav"><a href="#snapshot">Snapshot</a><a href="#flows">Hormuz flows</a><a href="#impact">Economic
+                impact</a><a href="#response">Resilience</a><a href="#sources">Sources & methods</a></nav>
+        <section id="snapshot">
+            <h2>Global energy-risk snapshot</h2>
+            <p class="intro">Selected indicators from different reporting periods. They are not one combined loss
+                calculation.</p>
+            <div class="grid">
+                <div class="card">
+                    <div class="tag">IEA · November 2026</div>
+                    <div class="metric">2.8B</div>
+                    <div class="label">Barrels of cumulative oil supply losses from the Gulf reported by IEA</div>
+                </div>
+                <div class="card">
+                    <div class="tag">IEA · 2025 average</div>
+                    <div class="metric">20 mb/d</div>
+                    <div class="label">Oil shipments through the Strait of Hormuz</div>
+                </div>
+                <div class="card">
+                    <div class="tag">EIA · Q2 2026</div>
+                    <div class="metric">5.1 mb/d</div>
+                    <div class="label">Total oil flows through Hormuz in Q2 2026</div>
+                </div>
+                <div class="card">
+                    <div class="tag">World Bank · Oct 2026</div>
+                    <div class="metric">+32%</div>
+                    <div class="label">Forecast rise in energy prices for 2026</div>
+                </div>
+            </div>
+        </section>
+        <section id="flows">
+            <h2>Oil transit through the Strait of Hormuz</h2>
+            <p class="intro">Average total oil flows, million barrels per day (mb/d), by quarter. Source: U.S. EIA,
+                November 2026.</p>
+            <div class="two">
+                <div class="card">
+                    <h3>Quarterly transit volumes</h3>
+                    <div class="barrow"><span>Q2 2025</span>
+                        <div class="track">
+                            <div class="bar" style="width:97.7%"></div>
+                        </div><b>21.1</b>
+                    </div>
+                    <div class="barrow"><span>Q3 2025</span>
+                        <div class="track">
+                            <div class="bar" style="width:99.1%"></div>
+                        </div><b>21.4</b>
+                    </div>
+                    <div class="barrow"><span>Q4 2025</span>
+                        <div class="track">
+                            <div class="bar" style="width:100%"></div>
+                        </div><b>21.6</b>
+                    </div>
+                    <div class="barrow"><span>Q1 2026</span>
+                        <div class="track">
+                            <div class="bar" style="width:69.4%"></div>
+                        </div><b>15.0</b>
+                    </div>
+                    <div class="barrow"><span>Q2 2026</span>
+                        <div class="track">
+                            <div class="bar" style="width:23.6%"></div>
+                        </div><b>5.1</b>
+                    </div>
+                    <div class="barrow"><span>Q3 2026</span>
+                        <div class="track">
+                            <div class="bar" style="width:42.1%"></div>
+                        </div><b>9.1</b>
+                    </div>
+                    <p class="small">Bars scaled to 21.6 mb/d. Values represent total oil flows, not crude oil alone.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Why this chokepoint matters</h3>
+                    <p>In 2025, around 20 million barrels per day of crude oil and oil products passed through Hormuz.
+                        The IEA estimates this was about one-quarter of global seaborne oil trade.</p>
+                    <div class="callout">A disruption at a narrow maritime corridor can affect buyers far beyond the
+                        conflict region through shipping, insurance, fuel and input costs.</div>
+                </div>
+            </div>
+        </section>
+        <section id="impact">
+            <h2>How an oil shock spreads through the economy</h2>
+            <p class="intro">A causal pathway to investigate. The size of each effect depends on duration, inventories,
+                alternative routes, spare capacity and policy response.</p>
+            <div class="grid">
+                <div class="card">
+                    <div class="tag">01 · Supply</div>
+                    <h3>Conflict & infrastructure risk</h3>
+                    <p class="label">Production interruption, shipping threats, route restrictions and uncertainty.</p>
+                </div>
+                <div class="card">
+                    <div class="tag">02 · Market</div>
+                    <h3>Price & freight volatility</h3>
+                    <p class="label">Buyers seek alternatives; shipping, insurance and benchmark prices may rise.</p>
+                </div>
+                <div class="card">
+                    <div class="tag">03 · Industry</div>
+                    <h3>Higher input costs</h3>
+                    <p class="label">Transport, aviation, manufacturing, petrochemicals and agriculture face cost
+                        pressure.</p>
+                </div>
+                <div class="card">
+                    <div class="tag">04 · Households</div>
+                    <h3>Inflation pressure</h3>
+                    <p class="label">Fuel and goods may become more expensive, with uneven effects across countries.</p>
+                </div>
+            </div>
+            <div class="card" style="margin-top:14px">
+                <h3>Selected economic evidence</h3>
+                <ul>
+                    <li>World Bank's October 2026 outlook forecast energy prices to rise 32% and overall commodity
+                        prices 23% in 2026.</li>
+                    <li>The World Bank forecast Brent to average $91/barrel in 2026, compared with $69 in 2025. This is
+                        a forecast, not a final measured annual average.</li>
+                    <li>UNCTAD discusses spillovers to trade, freight, insurance and financial conditions.</li>
+                </ul>
+            </div>
+        </section>
+        <section id="response">
+            <h2>Resilience options</h2>
+            <p class="intro">Policy and business responses that can reduce exposure; none is an instant or complete
+                substitute for stable supply.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>Diversify</h3>
+                    <ul>
+                        <li>Broaden supplier portfolios.</li>
+                        <li>Assess alternative transport corridors.</li>
+                        <li>Avoid excessive dependence on one chokepoint.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Prepare</h3>
+                    <ul>
+                        <li>Maintain appropriate emergency reserves.</li>
+                        <li>Improve transparent market and shipping data.</li>
+                        <li>Plan demand management and efficiency.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Transition</h3>
+                    <ul>
+                        <li>Expand reliable low-carbon electricity.</li>
+                        <li>Improve public transport and energy efficiency.</li>
+                        <li>Develop alternatives where suitable.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Protect people</h3>
+                    <ul>
+                        <li>Target support for vulnerable households.</li>
+                        <li>Communicate price and supply risks clearly.</li>
+                        <li>Track effects on food and essential services.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="sources">
+            <h2>Sources, definitions & limitations</h2>
+            <div class="card">
+                <ol>
+                    <li><a href="https://www.iea.org/reports/world-energy-outlook-2026/executive-summary">IEA, World
+                            Energy Outlook 2026 – Executive Summary</a>.</li>
+                    <li><a href="https://www.iea.org/about/oil-safety-and-emergency-response/strait-of-hormuz">IEA,
+                            Strait of Hormuz factsheet, February 2026</a>.</li>
+                    <li><a href="https://www.eia.gov/outlooks/steo/report/energysecurity/article.php">U.S. EIA,
+                            Short-Term Energy Outlook – Energy Security, November 2026</a>.</li>
+                    <li><a
+                            href="https://www.worldbank.org/en/news/press-release/2026/10/28/commodity-markets-outlook-october-2026">World
+                            Bank, Commodity Markets Outlook, October 2026</a>.</li>
+                    <li><a
+                            href="https://www.eia.gov/international/analysis/special-topics/World_Oil_Transit_Chokepoints">U.S.
+                            EIA, World Oil Transit Chokepoints</a>.</li>
+                    <li><a
+                            href="https://unctad.org/news/hormuz-disruption-deepens-global-economic-strain-across-trade-prices-and-finance">UNCTAD,
+                            Hormuz disruption and global economic strain, 1 April 2026</a>.</li>
+                </ol>
+                <p><b>Definitions:</b> mb/d = million barrels per day. Brent = an international crude oil benchmark.
+                    Transit flow is not the same as global production. Supply loss is not the same as financial loss or
+                    GDP loss.</p>
+                <p><b>Limitations:</b> Indicators refer to different periods and methods. Forecasts are not observed
+                    outcomes. This dashboard does not calculate one total dollar loss because the sources do not provide
+                    a single consistent global-loss measure.</p>
+            </div>
+        </section>
+        <footer>BU100 · SDG Action Lab · OIL SHOCK research dashboard · Educational artefact · Research review: 22
+            November 2026.</footer>
+    </main>
+</body>
+
+</html>
